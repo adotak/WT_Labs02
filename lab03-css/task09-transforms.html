@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 9 — CSS Transform Gallery</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .t-grid { display: flex; flex-wrap: wrap; gap: 20px; margin: 15px 0; }
+    .t-box {
+      width: 120px; height: 120px; background: #0f3460; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 10px; text-align: center; font-size: 0.85em;
+      transition: all 0.5s; cursor: pointer;
+    }
+
+    /* 2D Transforms */
+    .t-rotate:hover { transform: rotate(90deg); }
+    .t-scale:hover { transform: scale(1.4); }
+    .t-translate:hover { transform: translate(30px, -20px); }
+    .t-skew:hover { transform: skew(20deg, 10deg); }
+    .t-combined:hover { transform: rotate(15deg) scale(1.15) translateY(-10px); }
+
+    /* 3D Transforms */
+    .t-3d-wrap { perspective: 600px; display: inline-block; }
+    .t-rotateX:hover { transform: rotateX(45deg); }
+    .t-rotateY:hover { transform: rotateY(45deg); }
+    .t-rotate3d:hover { transform: rotateX(25deg) rotateY(25deg); }
+
+    /* Transform origin */
+    .t-origin-tl:hover { transform: rotate(30deg); transform-origin: top left; }
+    .t-origin-br:hover { transform: rotate(30deg); transform-origin: bottom right; }
+    .t-origin-center:hover { transform: rotate(30deg); transform-origin: center; }
+
+    /* Flip card */
+    .flip-card { width: 200px; height: 140px; perspective: 600px; cursor: pointer; }
+    .flip-inner {
+      width: 100%; height: 100%; transition: transform 0.6s;
+      transform-style: preserve-3d; position: relative;
+    }
+    .flip-card:hover .flip-inner { transform: rotateY(180deg); }
+    .flip-front, .flip-back {
+      position: absolute; width: 100%; height: 100%;
+      backface-visibility: hidden; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 600; font-size: 1.1em;
+    }
+    .flip-front { background: #0f3460; color: #fff; }
+    .flip-back { background: #e94560; color: #fff; transform: rotateY(180deg); }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← Back</a>
+  <div class="header"><h1>Task 9: CSS Transform Gallery</h1></div>
+
+  <div class="box">
+    <h2>2D Transforms (hover)</h2>
+    <div class="t-grid">
+      <div class="t-box t-rotate">Rotate 90°</div>
+      <div class="t-box t-scale">Scale 1.4x</div>
+      <div class="t-box t-translate">Translate</div>
+      <div class="t-box t-skew">Skew</div>
+      <div class="t-box t-combined" style="background:#e94560">Combined</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>3D Transforms (hover)</h2>
+    <div class="t-grid">
+      <div class="t-3d-wrap"><div class="t-box t-rotateX">Rotate X</div></div>
+      <div class="t-3d-wrap"><div class="t-box t-rotateY">Rotate Y</div></div>
+      <div class="t-3d-wrap"><div class="t-box t-rotate3d">Rotate 3D</div></div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Transform Origin (hover)</h2>
+    <div class="t-grid">
+      <div class="t-box t-origin-tl">Top Left</div>
+      <div class="t-box t-origin-center">Center</div>
+      <div class="t-box t-origin-br">Bottom Right</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Flip Card (hover)</h2>
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Front Side</div>
+        <div class="flip-back">Back Side ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <footer><p>CS 224L — UET Peshawar</p></footer>
+</div>
+</body>
+</html>

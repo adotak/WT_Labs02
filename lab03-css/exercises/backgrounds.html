@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise — Backgrounds</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .bg-demo {
+      padding: 40px; margin: 10px 0; border-radius: 8px;
+      color: #fff; text-align: center; font-weight: 600;
+    }
+
+    /* Exercise 10: Background Properties */
+    .bg-hex { background-color: #0f3460; }
+    .bg-rgb { background-color: rgb(233, 69, 96); }
+    .bg-hsl { background-color: hsl(210, 50%, 40%); }
+    .bg-rgba { background-color: rgba(15, 52, 96, 0.7); }
+
+    .bg-image {
+      background-image: url('https://picsum.photos/800/200');
+      background-size: cover;
+      background-position: center;
+      min-height: 150px;
+    }
+    .bg-repeat {
+      background-image: url('https://picsum.photos/100/100');
+      background-repeat: repeat;
+      min-height: 150px; color: #333;
+    }
+    .bg-fixed {
+      background-image: url('https://picsum.photos/900/300');
+      background-attachment: fixed;
+      background-size: cover;
+      min-height: 200px;
+    }
+
+    /* Exercise 11: Advanced Backgrounds */
+    .bg-linear { background: linear-gradient(135deg, #0f3460, #e94560); }
+    .bg-radial { background: radial-gradient(circle, #a2d2ff, #0f3460); }
+    .bg-conic { background: conic-gradient(#0f3460, #e94560, #a2d2ff, #0f3460); }
+
+    .bg-multi {
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://picsum.photos/800/300');
+      background-size: cover;
+      background-position: center;
+      min-height: 150px;
+    }
+
+    .bg-blend {
+      background: linear-gradient(#e94560, #0f3460), url('https://picsum.photos/800/200');
+      background-size: cover;
+      background-blend-mode: multiply;
+      min-height: 150px;
+    }
+
+    .bg-clip-text {
+      background: linear-gradient(90deg, #e94560, #0f3460, #a2d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3em; font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-link">← Back to Index</a>
+
+    <div class="header">
+      <h1>Background Styling</h1>
+      <p>Exercises 10–11: Colors, Images, Gradients</p>
+    </div>
+
+    <!-- Exercise 10 -->
+    <div class="box">
+      <h2>Exercise 10: Background Properties</h2>
+      <h3>Color Formats</h3>
+      <div class="bg-demo bg-hex">HEX: #0f3460</div>
+      <div class="bg-demo bg-rgb">RGB: rgb(233, 69, 96)</div>
+      <div class="bg-demo bg-hsl">HSL: hsl(210, 50%, 40%)</div>
+      <div class="bg-demo bg-rgba">RGBA: rgba(15, 52, 96, 0.7)</div>
+      <h3>Background Image</h3>
+      <div class="bg-demo bg-image">background-size: cover</div>
+      <div class="bg-demo bg-repeat" style="color:#333">background-repeat: repeat</div>
+      <div class="bg-demo bg-fixed">background-attachment: fixed (scroll page)</div>
+    </div>
+
+    <!-- Exercise 11 -->
+    <div class="box">
+      <h2>Exercise 11: Advanced Backgrounds</h2>
+      <h3>Gradients</h3>
+      <div class="bg-demo bg-linear">Linear Gradient</div>
+      <div class="bg-demo bg-radial">Radial Gradient</div>
+      <div class="bg-demo bg-conic">Conic Gradient</div>
+      <h3>Multiple Backgrounds & Blend</h3>
+      <div class="bg-demo bg-multi">Multiple background layers (overlay)</div>
+      <div class="bg-demo bg-blend">Background blend mode: multiply</div>
+      <h3>Background-clip Text</h3>
+      <div class="bg-clip-text">Gradient Text</div>
+    </div>
+
+    <footer><p>CS 224L — UET Peshawar</p></footer>
+  </div>
+</body>
+</html>

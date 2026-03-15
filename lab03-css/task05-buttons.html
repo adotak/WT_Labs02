@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5 — Button Collection</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+    .btn {
+      display: inline-block; padding: 10px 24px; border: none;
+      border-radius: 6px; font-size: 1em; cursor: pointer;
+      color: #fff; text-decoration: none; transition: all 0.3s;
+    }
+
+    /* Colors */
+    .btn-primary { background: #0f3460; }
+    .btn-primary:hover { background: #16213e; transform: translateY(-2px); }
+    .btn-danger { background: #e94560; }
+    .btn-danger:hover { background: #c0392b; }
+    .btn-success { background: #27ae60; }
+    .btn-success:hover { background: #219a52; }
+    .btn-warning { background: #f39c12; }
+    .btn-warning:hover { background: #d68910; }
+
+    /* Sizes */
+    .btn-sm { padding: 6px 14px; font-size: 0.85em; }
+    .btn-lg { padding: 14px 32px; font-size: 1.1em; }
+
+    /* Shapes */
+    .btn-round { border-radius: 50px; }
+    .btn-square { border-radius: 0; }
+
+    /* Outline */
+    .btn-outline {
+      background: transparent; border: 2px solid #0f3460; color: #0f3460;
+    }
+    .btn-outline:hover { background: #0f3460; color: #fff; }
+
+    /* Gradient */
+    .btn-gradient { background: linear-gradient(135deg, #0f3460, #e94560); }
+    .btn-gradient:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* Shadow */
+    .btn-shadow { box-shadow: 0 4px 15px rgba(15,52,96,0.4); }
+    .btn-shadow:hover { box-shadow: 0 6px 20px rgba(15,52,96,0.6); transform: translateY(-2px); }
+
+    /* Focus */
+    .btn:focus { outline: 3px solid #a2d2ff; outline-offset: 2px; }
+
+    /* Disabled */
+    .btn-disabled { background: #ccc; color: #888; cursor: not-allowed; }
+    .btn-disabled:hover { transform: none; background: #ccc; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← Back</a>
+  <div class="header"><h1>Task 5: Button Collection</h1></div>
+
+  <div class="box">
+    <h2>Colors</h2>
+    <div class="btn-row">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-warning">Warning</button>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Sizes</h2>
+    <div class="btn-row">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Shapes</h2>
+    <div class="btn-row">
+      <button class="btn btn-danger btn-round">Rounded</button>
+      <button class="btn btn-danger btn-square">Square</button>
+      <button class="btn btn-outline">Outline</button>
+      <button class="btn btn-outline btn-round">Outline Round</button>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Effects</h2>
+    <div class="btn-row">
+      <button class="btn btn-gradient">Gradient</button>
+      <button class="btn btn-primary btn-shadow">Shadow</button>
+      <button class="btn btn-gradient btn-round btn-shadow">All Effects</button>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>States</h2>
+    <div class="btn-row">
+      <button class="btn btn-primary">Normal (try focus with Tab)</button>
+      <button class="btn btn-disabled" disabled>Disabled</button>
+    </div>
+  </div>
+
+  <footer><p>CS 224L — UET Peshawar</p></footer>
+</div>
+</body>
+</html>

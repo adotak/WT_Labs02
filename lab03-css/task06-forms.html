@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 6 — Form Styling</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    form { max-width: 500px; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #16213e; }
+    .form-input {
+      width: 100%; padding: 10px; border: 2px solid #ddd;
+      border-radius: 6px; font-size: 1em; transition: border-color 0.3s;
+    }
+    .form-input:focus { border-color: #0f3460; outline: none; box-shadow: 0 0 5px rgba(15,52,96,0.2); }
+
+    /* Error state */
+    .form-input.error { border-color: #e94560; }
+    .error-msg { color: #e94560; font-size: 0.85em; margin-top: 4px; }
+
+    /* Success state */
+    .form-input.success { border-color: #27ae60; }
+    .success-msg { color: #27ae60; font-size: 0.85em; margin-top: 4px; }
+
+    /* Custom select */
+    select.form-input { background: #fff; cursor: pointer; }
+
+    /* Textarea */
+    textarea.form-input { min-height: 80px; resize: vertical; }
+
+    /* Checkbox & Radio custom */
+    .check-group { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+    .check-group input[type="checkbox"]:checked,
+    .check-group input[type="radio"]:checked { accent-color: #0f3460; }
+
+    /* Submit button */
+    .btn-submit {
+      background: linear-gradient(135deg, #0f3460, #e94560);
+      color: #fff; padding: 12px 30px; border: none;
+      border-radius: 6px; font-size: 1em; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* Success box */
+    .success-box {
+      background: #d4edda; color: #155724; padding: 15px;
+      border-radius: 8px; border: 1px solid #c3e6cb; margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← Back</a>
+  <div class="header"><h1>Task 6: Form Styling</h1></div>
+
+  <div class="box">
+    <h2>Registration Form</h2>
+    <form>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-input success" placeholder="Ahmad Aziz" value="Ahmad Aziz">
+        <div class="success-msg">✓ Looks good!</div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-input error" placeholder="your@email.com" value="invalid-email">
+        <div class="error-msg">✗ Please enter a valid email</div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-input" placeholder="Enter password">
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <select class="form-input">
+          <option>Computer Science</option>
+          <option>Electrical Engineering</option>
+          <option>Mechanical Engineering</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Semester</label>
+        <div class="check-group"><input type="radio" name="sem" checked> <span>4th</span></div>
+        <div class="check-group"><input type="radio" name="sem"> <span>5th</span></div>
+        <div class="check-group"><input type="radio" name="sem"> <span>6th</span></div>
+      </div>
+
+      <div class="form-group">
+        <label>Interests</label>
+        <div class="check-group"><input type="checkbox" checked> <span>Web Development</span></div>
+        <div class="check-group"><input type="checkbox"> <span>AI/ML</span></div>
+        <div class="check-group"><input type="checkbox" checked> <span>Mobile Apps</span></div>
+      </div>
+
+      <div class="form-group">
+        <label>Bio</label>
+        <textarea class="form-input" placeholder="Tell us about yourself..."></textarea>
+      </div>
+
+      <button type="button" class="btn-submit">Register</button>
+    </form>
+
+    <div class="success-box">✓ Registration successful! Welcome aboard, Ahmad.</div>
+  </div>
+
+  <footer><p>CS 224L — UET Peshawar</p></footer>
+</div>
+</body>
+</html>

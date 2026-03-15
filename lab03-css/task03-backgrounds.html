@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 — Background Gallery</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .bg {
+      padding: 40px; margin: 10px 0; border-radius: 8px;
+      color: #fff; text-align: center; font-weight: 600;
+    }
+    /* Solid colors */
+    .bg-solid1 { background: #0f3460; }
+    .bg-solid2 { background: rgb(233, 69, 96); }
+    .bg-solid3 { background: hsl(210, 50%, 40%); }
+
+    /* Image backgrounds */
+    .bg-cover {
+      background: url('https://picsum.photos/800/200') center/cover;
+      min-height: 150px;
+    }
+    .bg-repeat-x {
+      background: url('https://picsum.photos/100/100') repeat-x;
+      min-height: 120px; color: #333;
+    }
+    .bg-no-repeat {
+      background: url('https://picsum.photos/200/200') no-repeat center;
+      min-height: 150px;
+    }
+
+    /* Gradients */
+    .bg-linear { background: linear-gradient(135deg, #0f3460, #e94560); }
+    .bg-radial { background: radial-gradient(circle, #a2d2ff, #0f3460); }
+    .bg-conic { background: conic-gradient(#0f3460, #e94560, #a2d2ff, #0f3460); min-height: 120px; }
+
+    /* Multiple backgrounds */
+    .bg-multi {
+      background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://picsum.photos/800/300') center/cover;
+      min-height: 150px;
+    }
+
+    /* Blend mode */
+    .bg-blend {
+      background: linear-gradient(#e94560, #0f3460), url('https://picsum.photos/800/200') center/cover;
+      background-blend-mode: overlay;
+      min-height: 150px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← Back</a>
+  <div class="header"><h1>Task 3: Background Gallery</h1></div>
+
+  <div class="box">
+    <h2>Solid Colors</h2>
+    <div class="bg bg-solid1">HEX: #0f3460</div>
+    <div class="bg bg-solid2">RGB: rgb(233, 69, 96)</div>
+    <div class="bg bg-solid3">HSL: hsl(210, 50%, 40%)</div>
+  </div>
+
+  <div class="box">
+    <h2>Image Backgrounds</h2>
+    <div class="bg bg-cover">Cover — fills the box</div>
+    <div class="bg bg-repeat-x">Repeat-x — tiles horizontally</div>
+    <div class="bg bg-no-repeat">No-repeat — centered once</div>
+  </div>
+
+  <div class="box">
+    <h2>Gradients</h2>
+    <div class="bg bg-linear">Linear Gradient</div>
+    <div class="bg bg-radial">Radial Gradient</div>
+    <div class="bg bg-conic">Conic Gradient</div>
+  </div>
+
+  <div class="box">
+    <h2>Multi-layer & Blend</h2>
+    <div class="bg bg-multi">Multiple layers (dark overlay)</div>
+    <div class="bg bg-blend">Blend mode: overlay</div>
+  </div>
+
+  <footer><p>CS 224L — UET Peshawar</p></footer>
+</div>
+</body>
+</html>

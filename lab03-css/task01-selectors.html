@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 — CSS Selectors Practice</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    /* 5 Basic Selectors */
+    * { box-sizing: border-box; }                      /* 1. universal */
+    p { margin-bottom: 8px; }                          /* 2. element */
+    .highlight { background: #fff3cd; padding: 6px; border-left: 3px solid #ffc107; }
+    .danger { color: #e94560; font-weight: bold; }     /* 3,4. class */
+    #page-title { color: #e94560; }                    /* 5. id */
+
+    /* 3 Attribute Selectors */
+    a[target] { color: #e94560; text-decoration: none; border-bottom: 2px dashed; }
+    input[type="text"] { border: 2px solid #a2d2ff; padding: 8px; border-radius: 5px; }
+    a[href*="uet"] { font-weight: bold; }
+
+    /* 4 Combinators */
+    .combo p { color: #555; padding-left: 10px; }         /* descendant */
+    .combo > p { font-weight: bold; color: #16213e; }     /* child */
+    h3 + p { font-style: italic; }                        /* adjacent sibling */
+    h3 ~ ul { background: #eaf4fc; padding: 10px 30px; border-radius: 5px; }
+
+    /* 5 Pseudo-classes */
+    .hover-box {
+      display: inline-block; background: #0f3460; color: #fff;
+      padding: 10px 20px; border-radius: 6px; cursor: pointer;
+      transition: all 0.3s; margin: 5px;
+    }
+    .hover-box:hover { background: #e94560; transform: translateY(-3px); }
+    .plist li { padding: 8px; list-style: none; border-bottom: 1px solid #eee; }
+    .plist li:first-child { color: #e94560; font-weight: bold; }
+    .plist li:last-child { border-bottom: 3px solid #0f3460; }
+    .plist li:nth-child(odd) { background: #f0f2f5; }
+    .plist li:not(:first-child) { font-size: 0.95em; }
+
+    /* 2 Pseudo-elements */
+    .note::before { content: "📌 "; }
+    .drop::first-letter {
+      font-size: 2.5em; font-weight: bold; color: #e94560;
+      float: left; margin-right: 6px; line-height: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← Back</a>
+  <div class="header"><h1 id="page-title">Task 1: CSS Selectors Practice</h1></div>
+
+  <div class="box">
+    <h2>Basic Selectors</h2>
+    <p>Element selector targets all &lt;p&gt; tags.</p>
+    <p class="highlight">Class selector: .highlight</p>
+    <p class="danger">Class selector: .danger</p>
+    <p>ID selector styles the title above as red.</p>
+  </div>
+
+  <div class="box">
+    <h2>Attribute Selectors</h2>
+    <p><a href="https://uetpeshawar.edu.pk" target="_blank">UET Link</a> — [target] + [href*="uet"]</p>
+    <p><input type="text" placeholder="Styled input [type=text]"></p>
+  </div>
+
+  <div class="box combo">
+    <h2>Combinators</h2>
+    <h3>Descendant & Child</h3>
+    <p>Direct child (bold) + descendant</p>
+    <div><p>Nested — descendant only</p></div>
+    <h3>Sibling Combinators</h3>
+    <p>Adjacent sibling — italic</p>
+    <ul><li>General sibling ~</li><li>Item B</li></ul>
+  </div>
+
+  <div class="box">
+    <h2>Pseudo-classes</h2>
+    <div class="hover-box">Hover Me</div>
+    <div class="hover-box">Hover Too</div>
+    <ul class="plist">
+      <li>:first-child — bold red</li>
+      <li>Second</li>
+      <li>:nth-child(odd) — bg</li>
+      <li>Fourth</li>
+      <li>:last-child — border</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>Pseudo-elements</h2>
+    <p class="note">::before adds a pin emoji</p>
+    <p class="drop">Lorem ipsum dolor sit amet. This shows the ::first-letter drop cap effect on a paragraph.</p>
+  </div>
+
+  <footer><p>CS 224L — UET Peshawar</p></footer>
+</div>
+</body>
+</html>

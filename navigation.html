@@ -3,22 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Navigation</title>
+  <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="profile.html">About</a> |
-    <a href="schedule.html">Courses</a> |
-    <a href="#contact">Contact</a> |
-    <a href="https://www.uetpeshawar.edu.pk" target="_blank">UET Website</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">About</a></li>
+      <li><a href="schedule.html">Courses</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.uetpeshawar.edu.pk" target="_blank" rel="noopener">UET Website</a></li>
+    </ul>
   </nav>
 
-  <h1>Welcome</h1>
-  <p>This page demonstrates navigation.</p>
+  <main>
+    <h1>Welcome</h1>
+    <p>This page demonstrates navigation.</p>
 
-  <h2 id="contact">Contact</h2>
-  <p>You can reach us at info@uetpeshawar.edu.pk</p>
+    <h2 id="contact">Contact</h2>
+    <p>You can reach us at info@uetpeshawar.edu.pk</p>
+  </main>
 
+  <footer>
+    &copy; <span id="year"></span> UET Peshawar
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

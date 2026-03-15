@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise — Selectors & Combinators</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    /* Exercise 1: Inline vs Internal CSS — this is internal CSS */
+    .internal-demo { color: #0f3460; font-style: italic; }
+
+    /* Exercise 2: Basic Selectors */
+    p { margin-bottom: 8px; }                  /* element selector */
+    .highlight { background: #fff3cd; padding: 6px 10px; border-left: 3px solid #ffc107; }
+    #unique-box { background: #e8f4fd; padding: 10px; border-radius: 6px; }
+
+    /* Exercise 3: Attribute Selectors */
+    a[target] { color: #e94560; border-bottom: 2px dashed #e94560; text-decoration: none; }
+    input[type="text"] { border: 2px solid #a2d2ff; padding: 8px; border-radius: 5px; }
+    a[href*="uet"] { font-weight: bold; }
+
+    /* Exercise 4: Combinators */
+    .combo-demo p { color: #555; }                /* descendant */
+    .combo-demo > p { font-weight: bold; color: #16213e; border-left: 3px solid #e94560; padding-left: 10px; }
+    h3 + p { font-style: italic; color: #0f3460; }   /* adjacent sibling */
+    h3 ~ ul { background: #eaf4fc; padding: 10px 10px 10px 30px; border-radius: 5px; }
+
+    /* Exercise 5: Pseudo-classes */
+    .hover-box {
+      display: inline-block; background: #0f3460; color: #fff;
+      padding: 10px 20px; border-radius: 6px; cursor: pointer;
+      transition: all 0.3s; margin: 5px;
+    }
+    .hover-box:hover { background: #e94560; transform: translateY(-3px); }
+    .list-demo li { padding: 8px; list-style: none; border-bottom: 1px solid #eee; }
+    .list-demo li:first-child { color: #e94560; font-weight: bold; }
+    .list-demo li:last-child { border-bottom: 3px solid #0f3460; }
+    .list-demo li:nth-child(odd) { background: #f0f2f5; }
+    .list-demo li:not(:first-child) { font-size: 0.95em; }
+
+    /* Exercise 6: Pseudo-elements */
+    .note::before { content: "📌 "; }
+    .drop-cap::first-letter {
+      font-size: 3em; font-weight: bold; color: #e94560;
+      float: left; line-height: 1; margin-right: 8px;
+    }
+    ::selection { background: #e94560; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-link">← Back to Index</a>
+
+    <div class="header">
+      <h1>Selectors, Combinators & Pseudo-classes</h1>
+      <p>Exercises 1–6: CSS Basics</p>
+    </div>
+
+    <!-- Exercise 1: CSS Methods -->
+    <div class="box">
+      <h2>Exercise 1: CSS Methods</h2>
+      <p style="color: green; font-weight: bold;">This uses inline CSS (highest priority)</p>
+      <p class="internal-demo">This uses internal CSS (style tag)</p>
+      <p>This uses external CSS from main.css</p>
+    </div>
+
+    <!-- Exercise 2: Basic Selectors -->
+    <div class="box">
+      <h2>Exercise 2: Basic Selectors</h2>
+      <p>Element selector — targets all &lt;p&gt; tags</p>
+      <p class="highlight">Class selector — .highlight</p>
+      <div id="unique-box">ID selector — #unique-box</div>
+    </div>
+
+    <!-- Exercise 3: Attribute Selectors -->
+    <div class="box">
+      <h2>Exercise 3: Attribute Selectors</h2>
+      <p><a href="https://uetpeshawar.edu.pk" target="_blank">UET Link [target]</a> — has target attr</p>
+      <p><a href="../index.html">Home link</a> — no target attr</p>
+      <p><input type="text" placeholder="Styled [type=text]"> <input type="email" placeholder="Not styled"></p>
+    </div>
+
+    <hr>
+
+    <!-- Exercise 4: Combinators -->
+    <div class="box combo-demo">
+      <h2>Exercise 4: Combinators</h2>
+      <h3>Descendant & Child</h3>
+      <p>Direct child — bold via child combinator (&gt;)</p>
+      <div><p>Nested — only descendant combinator</p></div>
+      <h3>Sibling Combinators</h3>
+      <p>Adjacent sibling (+) — this is italic</p>
+      <ul>
+        <li>Item A — general sibling (~)</li>
+        <li>Item B</li>
+      </ul>
+    </div>
+
+    <!-- Exercise 5: Pseudo-classes -->
+    <div class="box">
+      <h2>Exercise 5: Pseudo-classes</h2>
+      <p>Hover these boxes:</p>
+      <div class="hover-box">Hover Me</div>
+      <div class="hover-box">Hover Too</div>
+      <h3>:nth-child, :first-child, :last-child, :not()</h3>
+      <ul class="list-demo">
+        <li>First child — bold red</li>
+        <li>Second item</li>
+        <li>Third — odd background</li>
+        <li>Fourth item</li>
+        <li>Last child — thick bottom border</li>
+      </ul>
+    </div>
+
+    <!-- Exercise 6: Pseudo-elements -->
+    <div class="box">
+      <h2>Exercise 6: Pseudo-elements</h2>
+      <p class="note">::before — pin emoji prepended</p>
+      <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This paragraph shows the ::first-letter drop-cap effect. Try selecting this text to see ::selection styling.</p>
+    </div>
+
+    <footer><p>CS 224L — UET Peshawar</p></footer>
+  </div>
+</body>
+</html>

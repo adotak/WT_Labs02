@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 10 — Advanced Effects</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    /* Gradient text */
+    .gradient-text {
+      font-size: 3em; font-weight: 700;
+      background: linear-gradient(90deg, #e94560, #0f3460, #a2d2ff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Custom checkbox */
+    .custom-check { display: flex; align-items: center; gap: 10px; margin: 8px 0; cursor: pointer; }
+    .custom-check input { display: none; }
+    .checkmark {
+      width: 22px; height: 22px; border: 2px solid #0f3460;
+      border-radius: 4px; display: inline-flex; align-items: center;
+      justify-content: center; transition: all 0.2s;
+    }
+    .custom-check input:checked + .checkmark {
+      background: #0f3460; border-color: #0f3460;
+    }
+    .custom-check input:checked + .checkmark::after {
+      content: "✓"; color: #fff; font-size: 14px;
+    }
+
+    /* Custom radio */
+    .custom-radio { display: flex; align-items: center; gap: 10px; margin: 8px 0; cursor: pointer; }
+    .custom-radio input { display: none; }
+    .radiomark {
+      width: 22px; height: 22px; border: 2px solid #e94560;
+      border-radius: 50%; display: inline-flex; align-items: center;
+      justify-content: center; transition: all 0.2s;
+    }
+    .custom-radio input:checked + .radiomark { border-color: #e94560; }
+    .custom-radio input:checked + .radiomark::after {
+      content: ""; width: 12px; height: 12px;
+      background: #e94560; border-radius: 50%;
+    }
+
+    /* Loading spinner */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loader {
+      width: 40px; height: 40px;
+      border: 4px solid #ddd; border-top: 4px solid #e94560;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+      display: inline-block; margin: 5px;
+    }
+    .loader-lg { width: 60px; height: 60px; border-width: 5px; }
+
+    /* Bouncing dots */
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .dots { display: inline-flex; gap: 6px; }
+    .dot {
+      width: 12px; height: 12px; background: #0f3460;
+      border-radius: 50%; animation: bounce 0.6s ease infinite;
+    }
+    .dot:nth-child(2) { animation-delay: 0.15s; background: #e94560; }
+    .dot:nth-child(3) { animation-delay: 0.3s; background: #a2d2ff; }
+
+    /* Text clip with bg image */
+    .text-clip {
+      font-size: 3em; font-weight: 900;
+      background: url('https://picsum.photos/800/200') center/cover;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Complex shadows */
+    .shadow-demo {
+      display: flex; flex-wrap: wrap; gap: 20px; margin: 15px 0;
+    }
+    .shadow-box {
+      width: 120px; height: 120px; background: #fff; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8em; text-align: center;
+    }
+    .sh-layered { box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.15), 0 15px 40px rgba(0,0,0,0.1); }
+    .sh-color { box-shadow: 0 5px 20px rgba(233,69,96,0.4); }
+    .sh-inset { box-shadow: inset 0 4px 10px rgba(0,0,0,0.2); }
+    .sh-neon { box-shadow: 0 0 5px #e94560, 0 0 15px #e94560, 0 0 30px #e94560; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← Back</a>
+  <div class="header"><h1>Task 10: Advanced Effects</h1></div>
+
+  <div class="box">
+    <h2>Gradient Text</h2>
+    <div class="gradient-text">CSS is Awesome</div>
+  </div>
+
+  <div class="box">
+    <h2>Custom Checkboxes & Radios</h2>
+    <label class="custom-check"><input type="checkbox" checked><span class="checkmark"></span>Web Development</label>
+    <label class="custom-check"><input type="checkbox"><span class="checkmark"></span>AI/ML</label>
+    <label class="custom-check"><input type="checkbox" checked><span class="checkmark"></span>Mobile Apps</label>
+    <hr>
+    <label class="custom-radio"><input type="radio" name="r" checked><span class="radiomark"></span>Option A</label>
+    <label class="custom-radio"><input type="radio" name="r"><span class="radiomark"></span>Option B</label>
+  </div>
+
+  <div class="box">
+    <h2>Loading Animations</h2>
+    <div class="loader"></div>
+    <div class="loader loader-lg"></div>
+    <div style="margin-top:15px">
+      <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Text Clipping with Background</h2>
+    <div class="text-clip">EXPLORE THE WORLD</div>
+  </div>
+
+  <div class="box">
+    <h2>Complex Shadows</h2>
+    <div class="shadow-demo">
+      <div class="shadow-box sh-layered">Layered</div>
+      <div class="shadow-box sh-color">Color</div>
+      <div class="shadow-box sh-inset">Inset</div>
+      <div class="shadow-box sh-neon">Neon</div>
+    </div>
+  </div>
+
+  <footer><p>CS 224L — UET Peshawar</p></footer>
+</div>
+</body>
+</html>

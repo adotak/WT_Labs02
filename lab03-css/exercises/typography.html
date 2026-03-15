@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise — Typography</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <style>
+    .demo-row { margin: 10px 0; padding: 10px; background: #f9f9f9; border-radius: 5px; }
+    .indent-demo { text-indent: 40px; }
+    .overflow-demo {
+      width: 300px; white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis;
+      background: #eee; padding: 8px; border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-link">← Back to Index</a>
+
+    <div class="header">
+      <h1>Text & Font Styling</h1>
+      <p>Exercises 7–9: Fonts, Text, Spacing</p>
+    </div>
+
+    <!-- Exercise 7: Font Properties -->
+    <div class="box">
+      <h2>Exercise 7: Font Properties</h2>
+      <div class="demo-row font-inter">Inter — Google Font (sans-serif)</div>
+      <div class="demo-row font-playfair">Playfair Display — Google Font (serif)</div>
+      <div class="demo-row font-mono">Roboto Mono — Google Font (monospace)</div>
+      <hr>
+      <div class="demo-row text-sm">14px — small text</div>
+      <div class="demo-row text-md">1em — medium text</div>
+      <div class="demo-row text-lg">1.5rem — large text</div>
+      <div class="demo-row text-xl">200% — extra large text</div>
+      <hr>
+      <div class="demo-row fw-normal">Font weight: 400 (normal)</div>
+      <div class="demo-row fw-bold">Font weight: 700 (bold)</div>
+    </div>
+
+    <!-- Exercise 8: Text Styling -->
+    <div class="box">
+      <h2>Exercise 8: Text Styling</h2>
+      <div class="demo-row text-left">Left aligned text</div>
+      <div class="demo-row text-center">Center aligned text</div>
+      <div class="demo-row text-right">Right aligned text</div>
+      <hr>
+      <div class="demo-row underline">Underline decoration</div>
+      <div class="demo-row line-through">Line-through decoration</div>
+      <div class="demo-row overline">Overline decoration</div>
+      <hr>
+      <div class="demo-row uppercase">uppercase transform</div>
+      <div class="demo-row lowercase">LOWERCASE TRANSFORM</div>
+      <div class="demo-row capitalize">capitalize each word</div>
+      <hr>
+      <div class="demo-row shadow-light">Light text shadow</div>
+      <div class="demo-row shadow-dark" style="font-size:1.3em">Dark text shadow</div>
+      <div class="demo-row shadow-glow" style="background:#1a1a2e;color:#fff;font-size:1.3em">Glow text shadow</div>
+    </div>
+
+    <!-- Exercise 9: Spacing & Layout -->
+    <div class="box">
+      <h2>Exercise 9: Text Spacing & Layout</h2>
+      <div class="demo-row line-tall">Line-height: 2 — extra tall lines for readability. This is a second sentence to show the line spacing.</div>
+      <div class="demo-row spacing-wide">Letter spacing: 3px wide</div>
+      <div class="demo-row spacing-tight">Letter spacing: -1px tight</div>
+      <div class="demo-row word-wide">Word spacing is wider here</div>
+      <div class="demo-row indent-demo">This paragraph has a 40px text-indent on the first line only.</div>
+      <div class="demo-row overflow-demo">This is a very long text that will overflow and show an ellipsis at the end because of text-overflow property.</div>
+    </div>
+
+    <footer><p>CS 224L — UET Peshawar</p></footer>
+  </div>
+</body>
+</html>
